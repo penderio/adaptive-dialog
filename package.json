@@ -1,6 +1,6 @@
 {
   "name": "@pndr/adaptive-dialog",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Used for displaying dialogs (optionally relative to a reference element) that adapt to mobile devices.",
   "main": "lib/index.js",
   "module": "es/index.js",
@@ -23,7 +23,7 @@
   "dependencies": {
     "@pndr/button": "^0.10.0",
     "emotion": "^10.0.6",
-    "prop-types": "^15.6.2",
+    "prop-types": "^15.7.2",
     "react-click-outside": "^3.0.1",
     "react-popper": "^1.3.6"
   },

@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import Portal from './Portal'
 import { Popper } from 'react-popper'
 import Popover from './Popover'
@@ -69,7 +70,21 @@ const DialogHeader = ({ title, onClose }) => (
     </div>
 )
 
-export default class ResponsiveDialog extends React.Component {
+export default class AdaptiveDialog extends React.Component {
+
+    static propTypes = {
+        title: PropTypes.string,
+        referenceElement: PropTypes.instanceOf(Element),
+        popoverPlacement: PropTypes.string,
+        popoverWidth: PropTypes.oneOfType([
+            PropTypes.string,
+            PropTypes.number
+        ]),
+        popoverMaxWidth: PropTypes.oneOfType([
+            PropTypes.string,
+            PropTypes.number
+        ])
+    }
 
     static defaultProps = {
         title: 'Unnamed Dialog'
@@ -87,7 +102,7 @@ export default class ResponsiveDialog extends React.Component {
                             {({ placement, ref, style }) => (
                                 <Portal mobile={false} onClose={this.props.onClose}>
                                     <div ref={ref} style={style} data-placement={placement}>
-                                        <Popover width={this.props.width || this.props.referenceElement.clientWidth} onClose={this.props.onClose}>
+                                        <Popover placement={placement} maxWidth={this.props.popoverMaxWidth} width={this.props.popoverWidth || this.props.referenceElement.clientWidth} onClose={this.props.onClose}>
                                             {this.props.children({
                                                 mobile: false
                                             })}

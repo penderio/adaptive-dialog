@@ -44,7 +44,7 @@ class Example1 extends Component {
                     <AdaptiveDialog
                         referenceElement={this.button}
                         popoverPlacement={'bottom-start'}
-                        width={300}
+                        popoverWidth={300}
                         onClose={() => this.setState({ open: false })}
                     >
                         {({ mobile }) => (
@@ -113,7 +113,7 @@ class Example2 extends Component {
                 {this.state.open ? (
                     <AdaptiveDialog
                         popoverPlacement={'bottom-start'}
-                        width={300}
+                        popoverWidth={300}
                         onClose={() => this.setState({ open: false })}
                     >
                         {({ mobile }) => (
